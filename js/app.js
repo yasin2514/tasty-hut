@@ -104,7 +104,7 @@ const showFoodDetails = food => {
     const modalContainer = document.getElementById('modal_container');
     const { strMeal, strInstructions, strMealThumb,strCategory,strYoutube,strArea } = food;
     modalContainer.innerHTML = `
-    <div class="card lg:card-side  lg:h-64">
+    <div class="card md:card-side  lg:h-64">
             <figure class="w-full h-56 lg:h-full"><img src="${strMealThumb}" alt="foods" class="h-full w-full" /></figure>
             <div class="card-body px-2">
                 <h2 class="card-title ">${strMeal}</h2>
