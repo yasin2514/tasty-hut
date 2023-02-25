@@ -96,13 +96,12 @@ const loadFoodDetails = id => {
             alert(error);
             return;
         })
-
 };
 
 // modal
 const showFoodDetails = food => {
     const modalContainer = document.getElementById('modal_container');
-    const { strMeal, strInstructions, strMealThumb,strCategory,strYoutube,strArea } = food;
+    const { strMeal, strInstructions, strMealThumb, strCategory, strYoutube, strArea } = food;
     modalContainer.innerHTML = `
     <div class="card md:card-side  lg:h-64">
             <figure class="w-full h-56 lg:h-full"><img src="${strMealThumb}" alt="foods" class="h-full w-full" /></figure>
@@ -115,7 +114,7 @@ const showFoodDetails = food => {
 
             </div>
         </div>
-    `
+    `;
 }
 
 
