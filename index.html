@@ -30,8 +30,7 @@
             style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('./images/banner_1.png')"
             class=" w-full h-screen bg-cover  text-center flex flex-col justify-center items-center gap-6  bg-blend-hard-darken">
             <h1 class="text-6xl font-bold text-white">Taste Our Delicious <br> Best Foods</h1>
-            <p class="text-gray-200 text-xl">There are many variations of passages of Lorem Ipsum available, but the
-                majority have suffered <br> alteration in some form, by injected humou.</p>
+            <p class="text-gray-200 text-xl">Would you like millions of new customers to enjoy your amazing food and groceries? <br> So would we! We delivered delicious and heathy foods. </p>
             <div class="flex w-5/12">
                 <input id="search_input" type="text" placeholder="Search any food"
                     class="input input-bordered input-warning w-full border-r-0 rounded-r-none" />
@@ -48,14 +47,14 @@
             <div id="card_parent" class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10 mt-20">
             </div>
             <div class="mt-10 text-center">
-                <button class="btn btn-warning hover:bg-yellow-600  font-bold">Show All</button>
+                <button id="show_all_btn" onclick="showAllFood()" class="btn btn-warning hover:bg-yellow-600  font-bold">Show All</button>
             </div>
 
         </section>
     </main>
     <!-- main end -->
     <!-- footer start -->
-    <footer class="bg-red-100 py-24">
+    <footer class="bg-red-100 pt-24 pb-12">
         <div class="w-10/12 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-5 text-justify">
             <div class="grid grid-cols-2 gap-y-5 lg:grid-cols-3">
                 <div class="gap-5 flex flex-col">
@@ -92,6 +91,7 @@
                 </div>
             </div>
         </div>
+        <p class="text-center mt-10">Develop by &copy;<span class="text-red-500">Yasin Khan</span> 2023</p>
 
     </footer>
 

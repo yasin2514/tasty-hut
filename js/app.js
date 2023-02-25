@@ -5,16 +5,17 @@ const loadFood = (foodName) => {
         .then(res => res.json())
         .then(data => displayFood(data.meals.slice(0, 6)))
         .catch(error => {
+            document.getElementById("search_input").value = '';
             alert(error);
             return;
         })
 };
-const loadFood2 = async () => {
+const loadAllFood = async (foodName) => {
     try {
         const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`;
         const res = await fetch(URL);
         const data = await res.json();
-        displayFood(data);
+        displayFood(data.meals);
     }
     catch (error) {
         alert('error');
@@ -46,17 +47,39 @@ const displayFood = (meals) => {
 // search food
 const searchFood = () => {
     const searchInput = document.getElementById("search_input");
-    const search = searchInput.value;
+    let search = searchInput.value;
     if (search == '') {
-        alert("please enter a food name");
-        return;
+        loadFood('chicken');
     }
-    loadFood(search);
-    searchInput.value = '';
-
+    else {
+        loadFood(search);
+    }
+    return search;
 }
 // click show all
-const showAllFood = ()=>{
-
+const showAllFood = () => {
+    const search = searchFood();
+    const showAllBtn = document.getElementById('show_all_btn');
+    const btnText = showAllBtn.innerText;
+    if (btnText === 'SHOW ALL') {
+        if (search === '') {
+            loadAllFood('chicken');
+        }
+        else {
+            loadAllFood(search);
+        }
+        loadAllFood('chicken');
+        showAllBtn.innerText = "SHOW LESS";
+    }
+    else {
+        if (search === '') {
+            loadFood('chicken');
+        }
+        else {
+            loadFood(search);
+        }
+        loadFood('chicken');
+        showAllBtn.innerText = "SHOW ALL";
+    }
 }
 loadFood('chicken');
